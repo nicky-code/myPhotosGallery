@@ -6,20 +6,21 @@
   <meta charset="utf-8">
 
   {% if title %}
-  <title>GALLERY- {{title}}</title>
+  <title>GALLERY-PHOTOS {{title}}</title>
   {% else %}
-    <title> My Gallery </title>
+    <title> Gallery-Photos </title>
   {% endif %}
 
   {% block styles %}
     {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/basegallery.css' %}">
   {% endblock %}
 
 </head>
 <body>
     {% include "navbar.html" %}
 
-    {% block content %} <h1 class='text-center'>Welcome to My Gallery</h1> {%endblock%}
+    {% block content %} <h1 class='text-center' style="font-style: italic">Welcome to My Gallery</h1> {%endblock%}
 
     {% block scripts %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
