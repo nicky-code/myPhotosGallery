@@ -8,3 +8,14 @@ class Image(models.Model):
     location=models.ForeignKey(Location)
     category=models.ForeignKey(Category)
     
+    
+    
+    
+    
+class Location(models.Model):
+    name = models.CharField(max_length =30)
+    
+    
+    
+class Category(models.Model):
+    name=  models.CharField(max_length =30)
