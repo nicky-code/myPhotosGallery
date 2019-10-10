@@ -18,7 +18,14 @@ class Image(models.Model):
     def delete_image(self):
         self.delete()
         
+    def update_image(self):
+        self.update()
+        
+    def get_image_by_id(id):
+        pass
     
+    def search_image(cls,category):
+        
     
     
     
