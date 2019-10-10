@@ -2,20 +2,32 @@ from django.db import models
 
 # Create your models here.
 class Image(models.Model):
+    id = models.CharField
     image = models.ImageField(upload_to='/')
-    image_name = models.CharField(max_length =30)
-    image_description = models.CharField(max_length =30)
-    location=models.ForeignKey(Location)
-    category=models.ForeignKey(Category)
+    image_name = models.CharField(max_length =50)
+    image_description = models.CharField(max_length =50)
+    location=models.foreignKey(Location)
+    category=models.foreignKey(Category)
     
+    def __str__(self):
+        return self.image
+
+    def save_image(self):
+        self.save()
+        
+    def delete_image(self):
+        self.delete()
+        
     
     
     
     
 class Location(models.Model):
-    name = models.CharField(max_length =30)
-    
+    loc_name = models.CharField(max_length =50)
+    images=models.OneToManyField(images)
     
     
 class Category(models.Model):
-    name=  models.CharField(max_length =30)
+    cat_name=  models.CharField(max_length =50)
+    images = models.ManyToManyField(images)
+    
