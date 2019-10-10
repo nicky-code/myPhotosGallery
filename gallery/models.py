@@ -25,16 +25,41 @@ class Image(models.Model):
         pass
     
     def search_image(cls,category):
-        
-    
+        pass
+ 
+    def filter_by_location(location):
+        pass   
     
     
 class Location(models.Model):
     loc_name = models.CharField(max_length =50)
     images=models.OneToManyField(images)
     
-    
+    def __str__(self):
+        return self.location
+
+    def save_location(self):
+        self.save()
+        
+    def delete_location(self):
+        self.delete()
+        
+    def update_location(self):
+        self.update()
+        
 class Category(models.Model):
     cat_name=  models.CharField(max_length =50)
     images = models.ManyToManyField(images)
     
+
+    def __str__(self):
+        return self.category
+
+    def save_category(self):
+        self.save()
+        
+    def delete_category(self):
+        self.delete()
+        
+    def update_category(self):
+        self.update()
