@@ -105,14 +105,14 @@ class CategoryTestClass(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.nicky,Category))
     
-    # # Testing Save Method
-    # def test_save_location(self):
-    #     '''
-    #     function to check the save method of location
-    #     '''
-    #     self.nicky.save_location()
-    #     locations = Location.objects.all()
-    #     self.assertTrue(len(locations) > 0)
+    # Testing Save Method
+    def test_save_category(self):
+        '''
+        function to check the save method of category
+        '''
+        self.nicky.save_category()
+        categories = Category.objects.all()
+        self.assertTrue(len(categories) > 0)
         
     # def test_delete_location(self):
     #     '''
