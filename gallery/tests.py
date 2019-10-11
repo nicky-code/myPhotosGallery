@@ -69,15 +69,15 @@ class LocationTestClass(TestCase):
         locations = Location.objects.all()
         self.assertTrue(len(locations) > 0)
         
-    # def test_delete_image(self):
-    #     '''
-    #     a method to delete a saved image
-    #     '''
-    #     self.nicky.save_image()
-    #     picture = Image.objects.filter(image_name='photo').first()
-    #     delete = Image.objects.filter(image_name=picture.image_name).delete()
-    #     image=Image.objects.all()
-    #     self.assertFalse(len(image)==1)
+    def test_delete_location(self):
+        '''
+        a method to delete a saved location
+        '''
+        self.nicky.save_location()
+        picture = Location.objects.filter(location_image='Kimihurura').first()
+        delete = Location.objects.filter(location_image=picture.location_image).delete()
+        location=Location.objects.all()
+        self.assertFalse(len(location)==1)
         
     # def test_update_image():
     #     '''
