@@ -45,7 +45,11 @@ class ImageTestClass(TestCase):
         updated = Image.objects.filter(image_name='pic').first()
         self.assertNotEqual(picture.image_name,updated.image_name)
     
-    
+    def test_get_image(self):
+        images=Image.objects.all()
+        self.assertFalse(len(images)>0)
+
+
 class LocationTestClass(TestCase):
     '''
     a class to test the location instances and its methods
