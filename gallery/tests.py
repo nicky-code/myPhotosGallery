@@ -101,9 +101,9 @@ class CategoryTestClass(TestCase):
         self.nicky= Category(cat_name='Fashion')
         
 
-    # # Testing  instance
-    # def test_instance(self):
-    #     self.assertTrue(isinstance(self.nicky, Location))
+    # Testing  instance
+    def test_instance(self):
+        self.assertTrue(isinstance(self.nicky,Category))
     
     # # Testing Save Method
     # def test_save_location(self):
