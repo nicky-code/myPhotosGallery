@@ -41,4 +41,7 @@ class ImageTestClass(TestCase):
         '''
         self.nicky.save_image
         picture= Image.objects.filter(image_name='photo').first()
-        update = Image.
+        update = Image.ojects.filter(image_name=image.image_name).update(image_name='pic')
+        updated = Image.objects.filter(image_name='pic').first()
+        self.assertEqual(image.image_name,updated.image_name)
+        
