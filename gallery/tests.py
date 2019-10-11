@@ -114,23 +114,23 @@ class CategoryTestClass(TestCase):
         categories = Category.objects.all()
         self.assertTrue(len(categories) > 0)
         
-    # def test_delete_location(self):
-    #     '''
-    #     a method to delete a saved location
-    #     '''
-    #     self.nicky.save_location()
-    #     picture = Location.objects.filter(location_image='Kimihurura').first()
-    #     delete = Location.objects.filter(location_image=picture.location_image).delete()
-    #     location=Location.objects.all()
-    #     self.assertFalse(len(location)==1)
+    def test_delete_category(self):
+        '''
+        a method to delete a saved category
+        '''
+        self.nicky.save_category()
+        picture = Category.objects.filter(cat_name='Fashion').first()
+        delete = Category.objects.filter(cat_name=picture.cat_name).delete()
+        category= Category.objects.all()
+        self.assertFalse(len(category)==1)
         
-    # def test_update_location(self):
-    #     '''
-    #     a method that helps to update the location
-    #     '''
-    #     self.nicky.save_location()
-    #     picture = Location.objects.filter(location_image='Kimihurura').first()
-    #     update = Location.objects.filter(location_image=picture.location_image).update(location_image='Kimironko')
-    #     updated = Location.objects.filter(location_image='Kimironko').first()
-    #     self.assertNotEqual(picture.location_image,updated.location_image)
+    def test_update_category(self):
+        '''
+        a method that helps to update the category
+        '''
+        self.nicky.save_category()
+        picture = Category.objects.filter(cat_name='Fashion').first()
+        update = Category.objects.filter(cat_name=picture.cat_name).update(cat_name='Travel')
+        updated = Category.objects.filter(cat_name='Travel').first()
+        self.assertNotEqual(picture.cat_name,updated.cat_name)
     
