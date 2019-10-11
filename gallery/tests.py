@@ -60,14 +60,14 @@ class LocationTestClass(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.nicky, Location))
     
-    # # Testing Save Method
-    # def test_save_method(self):
-    #     '''
-    #     function to check the save method of
-    #     '''
-    #     self.nicky.save_image()
-    #     images = Image.objects.all()
-    #     self.assertTrue(len(images) > 0)
+    # Testing Save Method
+    def test_save_location(self):
+        '''
+        function to check the save method of location
+        '''
+        self.nicky.save_location()
+        locations = Location.objects.all()
+        self.assertTrue(len(locations) > 0)
         
     # def test_delete_image(self):
     #     '''
