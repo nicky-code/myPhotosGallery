@@ -79,13 +79,58 @@ class LocationTestClass(TestCase):
         location=Location.objects.all()
         self.assertFalse(len(location)==1)
         
-    # def test_update_image():
+    def test_update_location(self):
+        '''
+        a method that helps to update the location
+        '''
+        self.nicky.save_location()
+        picture = Location.objects.filter(location_image='Kimihurura').first()
+        update = Location.objects.filter(location_image=picture.location_image).update(location_image='Kimironko')
+        updated = Location.objects.filter(location_image='Kimironko').first()
+        self.assertNotEqual(picture.location_image,updated.location_image)
+    
+    
+    
+class CategoryTestClass(TestCase):
+    '''
+    a class to test the category instances and its methods
+    '''
+    
+    # Set up method
+    def setUp(self):
+        self.nicky= Category(cat_name='Fashion')
+        
+
+    # # Testing  instance
+    # def test_instance(self):
+    #     self.assertTrue(isinstance(self.nicky, Location))
+    
+    # # Testing Save Method
+    # def test_save_location(self):
     #     '''
-    #     a method that helps to update the image
+    #     function to check the save method of location
     #     '''
-    #     self.nicky.save_image
-    #     picture= Image.objects.filter(image_name='photo').first()
-    #     update = Image.ojects.filter(image_name=image.image_name).update(image_name='pic')
-    #     updated = Image.objects.filter(image_name='pic').first()
-    #     self.assertEqual(image.image_name,updated.image_name)
+    #     self.nicky.save_location()
+    #     locations = Location.objects.all()
+    #     self.assertTrue(len(locations) > 0)
+        
+    # def test_delete_location(self):
+    #     '''
+    #     a method to delete a saved location
+    #     '''
+    #     self.nicky.save_location()
+    #     picture = Location.objects.filter(location_image='Kimihurura').first()
+    #     delete = Location.objects.filter(location_image=picture.location_image).delete()
+    #     location=Location.objects.all()
+    #     self.assertFalse(len(location)==1)
+        
+    # def test_update_location(self):
+    #     '''
+    #     a method that helps to update the location
+    #     '''
+    #     self.nicky.save_location()
+    #     picture = Location.objects.filter(location_image='Kimihurura').first()
+    #     update = Location.objects.filter(location_image=picture.location_image).update(location_image='Kimironko')
+    #     updated = Location.objects.filter(location_image='Kimironko').first()
+    #     self.assertNotEqual(picture.location_image,updated.location_image)
     
