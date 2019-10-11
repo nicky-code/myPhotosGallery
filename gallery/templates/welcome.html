@@ -3,5 +3,7 @@
 
 {% block content %}
 {{block.super}}
+{% for img in image %}
 <!-- <h1> Welcome to My Gallery</h1> -->
+<img src="{{img.image.url}}" width="300" height="270">{% endfor%}
 {% endblock %}
