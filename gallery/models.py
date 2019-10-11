@@ -1,42 +1,13 @@
 from django.db import models
 
 # Create your models here.
-class Image(models.Model):
-    id = models.CharField
-    image = models.ImageField(upload_to='/')
-    image_name = models.CharField(max_length =50)
-    image_description = models.CharField(max_length =50)
-    location=models.foreignKey(Location)
-    category=models.foreignKey(Category)
-    
-    def __str__(self):
-        return self.image
 
-    def save_image(self):
-        self.save()
-        
-    def delete_image(self):
-        self.delete()
-        
-    def update_image(self):
-        self.update()
-        
-    def get_image_by_id(id):
-        pass
-    
-    def search_image(cls,category):
-        pass
- 
-    def filter_by_location(location):
-        pass   
-    
-    
+
 class Location(models.Model):
-    loc_name = models.CharField(max_length =50)
-    images=models.OneToManyField(images)
+    location_image = models.CharField(max_length =50)
     
     def __str__(self):
-        return self.location
+        return self.location_image
 
     def save_location(self):
         self.save()
@@ -49,11 +20,10 @@ class Location(models.Model):
         
 class Category(models.Model):
     cat_name=  models.CharField(max_length =50)
-    images = models.ManyToManyField(images)
     
 
     def __str__(self):
-        return self.category
+        return self.cat_name
 
     def save_category(self):
         self.save()
@@ -63,3 +33,38 @@ class Category(models.Model):
         
     def update_category(self):
         self.update()
+        
+        
+class Image(models.Model):
+    image = models.ImageField(upload_to='images/',null=True)
+    image_name = models.CharField(max_length =50)
+    image_description = models.CharField(max_length =50)
+    location = models.ForeignKey(Location, null=True)
+    category= models.ForeignKey(Category, null=True)
+
+    def __str__(self):
+        return self.image_name
+
+    def save_image(self):
+        self.save()
+        
+    def delete_image(self):
+        self.delete()
+        
+    def update_image(self):
+        self.update()
+        
+    @classmethod    
+    def get_image_by_id(cls,id):
+        images = cls.objects.filter(id = id)
+        
+    @classmethod
+    def search_image(cls,search_category):
+        picture = cls.objects.filter(category__cat_name = search_category)
+        return picture
+ 
+    def filter_by_location(cls,location):
+        image = cls.objects.filter(location__location_image=location)
+        return image
+        
+        
