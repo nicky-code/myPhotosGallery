@@ -7,8 +7,8 @@
 <!-- <h1> Welcome to My Gallery</h1> -->
 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 <img src="{{img.image.url}}" width="300" height="270" class="img-thumbnail" alt="Image" data-toggle="modal" data-target="#{{img.id}}">
-<h2>{{img.location}}</h2>
-<h2>{{img.category}}</h2>
+<h2 style="font-style: italic;font-size:25px">{{img.location}}</h2>
+<h2 style="font-style: italic;font-size:20px">{{img.category}}</h2>
 </div>
 <!--Modal-->
 <div class="modal fade" id="{{img.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -23,11 +23,18 @@
 
                 <div class="modal-body">
                     <img src="{{img.image.url}}" class="img-thumbnail" alt="Image">
-                    <p>{{img.img_name}}</p>
-                    <p>{{img.img_description}}</p>
+                    <p>{{img.image_name}}</p>
+                    <p>{{img.image_description}}</p>
+                    <p>Image-Location: {{img.location_image}}</p>
+                    <p>Category: {{img.cat_name}}</p>
 
                 </div>
-
+                <div class="modal-footer">
+                    <input class="form-control" type="text" value="http://127.0.0.1:8000{{img.image.url}}" id="thislinkhere-{{img.id}}">
+                    <a onclick="copyLink('{{img.id}}')"><button type="button" class="btn btn-outline-danger my-2 my-sm-0 link-btn">Copy
+                        image Link</button></a>
+              
+                  </div>
             </div>
 
         </div>
