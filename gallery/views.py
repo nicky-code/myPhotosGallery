@@ -39,3 +39,9 @@ def display_location(request,location):
     location = Location.objects.all()
     
     return render(request,'all-galleries/location.html',{'location':location,'image':loc}) 
+
+def display_category(request):
+    category = Category.objects.all()
+    image = Image.objects.all()
+    
+    return render(request,'all-galleries/category.html',{'category':category,'image':image})

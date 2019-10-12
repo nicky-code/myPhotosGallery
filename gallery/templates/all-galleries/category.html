@@ -1,0 +1,22 @@
+{%extends 'all-galleries/base.html'%}
+
+{% block content %}
+{{block.super}}
+<div class="container">
+    <div class="row-align-items-center">
+        {% for cat in image %}
+        <div class="card">
+            <div class="card-body">
+                <h2 style="text-decoration-line: line-through">Category-Photo: {{cat.category.cat_name}}</h2>
+                <br>
+                <div class="thumbnail" style="background-color: rgb(39, 37, 37)">
+                    <img style="height: 300; width:350" src="{{cat.image.url}}" class="img img-responsive full-width" alt="img-responsive">
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
