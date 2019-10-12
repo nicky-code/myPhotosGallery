@@ -30,4 +30,12 @@ def display_image(request,id):
         
     except DoesNotExist:
         raise Http404() 
-    return render(request,"welcome.html",{'image':image})        
+    return render(request,"welcome.html",{'image':image})    
+
+
+def display_location(request,location):
+    loc = Image.filter_by_location(location)
+    print(loc)   
+    location = Location.objects.all()
+    
+    return render(request,'all-galleries/location.html',{'location':location,'image':loc}) 
