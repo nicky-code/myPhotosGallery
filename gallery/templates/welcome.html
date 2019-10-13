@@ -24,17 +24,17 @@
                     </button>
 
                     <div class="modal-body">
-                        <img src="{{img.image.url}}" class="img-fluid" id="mylink" data-toggle="modal" data-target="#{{img.id}}" alt="image-responsive">
+                        <img src="{{img.image.url}}" class="img-fluid" data-toggle="modal" data-target="#{{img.id}}" style="width: 100%;margin-left:3%">
                         <p><strong> Image-Location:</strong> {{img.location}}</p>
                         <p><strong> Category:</strong> {{img.category}}</p>
 
                     </div>
-                    <div class="modal-footer">
+                    <!-- <div class="modal-footer">
                         <input class="form-control" type="text" value="http://127.0.0.1:8000{{img.image.url}}" id="thislinkhere-{{img.id}}">
                         <a onclick="copyLink('{{img.id}}')"><button type="button" class="btn btn-outline-danger my-2 my-sm-0 link-btn">Copy
                             image Link</button></a>
                 
-                    </div>
+                    </div> -->
                 </div>
 
             </div>

@@ -13,7 +13,13 @@
     
     <ul class="nav navbar-nav">
       <li><a href="{% url 'welcome' %}">Home></a></li>
-      <li><a href="{% url 'location' location='Kimihurura' %}">Location</a></li>
+      <li><a class="dropdown-item" href="{% url 'location' location='Kimihurura' %}">Kimihurura</a>
+          <a class="dropdown-item" href="{% url 'location' location='Kimironko' %}">Kimironko</a>
+          <a class="dropdown-item" href="{% url 'location' location='Kacyiru' %}">Kacyiru</a>
+          <a class="dropdown-item" href="{% url 'location' location='Nyamirambo' %}">Nyamirambo</a>
+          <a class="dropdown-item" href="{% url 'location' location='Gikondo' %}">Gikondo</a>
+      
+      </li>
       <li><a href="{% url 'category' %}">Category</a></li>
     </ul>
   </div>

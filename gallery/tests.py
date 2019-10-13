@@ -1,5 +1,6 @@
 from django.test import TestCase
 from .models import Image,Location,Category
+import pyperclip
 
 # Create your tests here.
 
@@ -49,6 +50,7 @@ class ImageTestClass(TestCase):
         images=Image.objects.all()
         self.assertFalse(len(images)>0)
 
+    def test_copy_image
 
 class LocationTestClass(TestCase):
     '''
