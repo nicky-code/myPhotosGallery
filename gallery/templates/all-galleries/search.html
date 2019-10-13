@@ -17,7 +17,7 @@
     {% for image in images %}
       <div class="col-sm-6 col-md-3">
           <h1>{{image.image_name}}</h1>
-          <img src="{{image.image.url}}">
+          <img src="{{image.image.url}}" width="300" height="280">
       </div>
     {% endfor %}
   {% endif %}
