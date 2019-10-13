@@ -50,7 +50,15 @@ class ImageTestClass(TestCase):
         images=Image.objects.all()
         self.assertFalse(len(images)>0)
 
-    def test_copy_image
+    def test_copy_image(self):
+        '''
+        Test to confirm that we are copying the image.
+        '''
+        
+        self.new_image.save_image()
+        Image.copy_image(nicky)
+        self.assertEqual(self.new_image.image,pyperclip.paste())
+        
 
 class LocationTestClass(TestCase):
     '''

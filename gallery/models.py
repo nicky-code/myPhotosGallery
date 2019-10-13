@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 
@@ -69,4 +70,4 @@ class Image(models.Model):
         image = cls.objects.filter(location__location_image__icontains=location)
         return image
         
-        
+    

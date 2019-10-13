@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http  import HttpResponse
 from .models import Image,Location,Category
 
+
 # Create your views here.
 def welcome(request):
     images = Image.objects.all()
@@ -45,3 +46,4 @@ def display_category(request):
     image = Image.objects.all()
     
     return render(request,'all-galleries/category.html',{'category':category,'image':image})
+

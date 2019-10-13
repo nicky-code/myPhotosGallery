@@ -13,12 +13,20 @@
     
     <ul class="nav navbar-nav">
       <li><a href="{% url 'welcome' %}">Home></a></li>
-      <li><a class="dropdown-item" href="{% url 'location' location='Kimihurura' %}">Kimihurura</a>
-          <a class="dropdown-item" href="{% url 'location' location='Kimironko' %}">Kimironko</a>
-          <a class="dropdown-item" href="{% url 'location' location='Kacyiru' %}">Kacyiru</a>
-          <a class="dropdown-item" href="{% url 'location' location='Nyamirambo' %}">Nyamirambo</a>
-          <a class="dropdown-item" href="{% url 'location' location='Gikondo' %}">Gikondo</a>
-      
+      <!--search from Bootstrap4/Documentation/Segmented buttons-->
+      <li>
+          <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <button type="button" class="btn btn-outline-secondary" style="color: blue">Location</button>
+                <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="{% url 'location' location='Kimihurura' %}">Kimihurura</a>
+                  <a class="dropdown-item" href="{% url 'location' location='Kimironko' %}">Kimironko</a>
+                  <a class="dropdown-item" href="{% url 'location' location='Kacyiru' %}">Kacyiru</a>
+                  <a class="dropdown-item" href="{% url 'location' location='Nyamirambo' %}">Nyamirambo</a>
+                  <a class="dropdown-item" href="{% url 'location' location='Gikondo' %}">Gikondo</a>
       </li>
       <li><a href="{% url 'category' %}">Category</a></li>
     </ul>

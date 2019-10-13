@@ -8,7 +8,7 @@
 <div class="row" style="margin-bottom: 3%">
     {% for img in image %}
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" style="margin-top: 3%">
-            <img src="{{img.image.url}}" width="400" height="370" class="img-thumbnail" alt="Image" data-toggle="modal" data-target="#{{img.id}}">
+            <img src="{{img.image.url}}" width="500" height="470" class="img-thumbnail" alt="Image" data-toggle="modal" data-target="#{{img.id}}">
             <h2 style="font-style: italic;font-size:25px"><strong> {{img.image_name}}</strong></h2>
             <h2 style="font-style: italic;font-size:20px"><strong> {{img.image_description}}</strong></h2>
         </div>
@@ -27,14 +27,12 @@
                         <img src="{{img.image.url}}" class="img-fluid" data-toggle="modal" data-target="#{{img.id}}" style="width: 100%;margin-left:3%">
                         <p><strong> Image-Location:</strong> {{img.location}}</p>
                         <p><strong> Category:</strong> {{img.category}}</p>
-
+                        <p><strong>Copy image address</strong><a href="http://127.0.0.1:8000{{img.image.url}}" id="myInput">http://127.0.0.1:8000{{img.image.url}}</a> </p>
                     </div>
-                    <!-- <div class="modal-footer">
-                        <input class="form-control" type="text" value="http://127.0.0.1:8000{{img.image.url}}" id="thislinkhere-{{img.id}}">
-                        <a onclick="copyLink('{{img.id}}')"><button type="button" class="btn btn-outline-danger my-2 my-sm-0 link-btn">Copy
-                            image Link</button></a>
+                    <div class="modal-footer">
+                       <button type="button" class="btn-btn-warning" data-dismiss="modal" style="font-style: italic">Close</button>
                 
-                    </div> -->
+                    </div>
                 </div>
 
             </div>
